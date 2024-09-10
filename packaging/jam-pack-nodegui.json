@@ -1,0 +1,45 @@
+{
+  "fetch": {
+    "gitFromCwd": true
+  },
+  "build": {
+    "packageManager": "npm"
+  },
+  "prune": {
+    "skip": false,
+    "patterns": [
+      {
+        "keep": [
+          "package.json",
+          "dist/*.js",
+          "dist/*.cjs"
+        ]
+      }
+    ]
+  },
+  "addLauncher": {
+    "jsEntryPoint": "dist/main.cjs"
+  },
+  "quietQode": {},
+  "zip": {
+    "platforms": ["linux"],
+    "skip": false
+  },
+  "arch": {
+    "skip": false,
+    "controlFields": {
+      "Depends": "libx11-6",
+      "Section": "x11",
+      "Maintainer": "Virus288",
+      "Priority": "optional",
+      "Description": "Api toaster desktop application for logs managment"
+    },
+    "prePack": [
+      "cd $debianStep_debianSourceDirectory && mkdir -p usr/share/applications",
+      "cd $debianStep_debianSourceDirectory && cp $pruneStep_trashDirectory/packaging/linux/nodeguiapp.desktop usr/share/applications/",
+
+      "cd $debianStep_debianSourceDirectory && mkdir -p usr/share/icons",
+      "cd $debianStep_debianSourceDirectory && cp -r $pruneStep_trashDirectory/packaging/linux/icons/hicolor usr/share/icons/"
+    ]
+  }
+}

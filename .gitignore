@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+
+# Transpiled files
+build/
+dist/
+
+# VS Code
+.vscode
+!.vscode/tasks.js
+
+# JetBrains IDEs
+.idea/
+
+# Optional npm cache directory
+.npm
+yarn.lock
+tsconfig.tsbuildinfo
+
+# Optional eslint cache
+.eslintcache
+
+# Misc
+.DS_Store
+package-lock.json
+
+yarn-debug.log*
+yarn-error.log*
+
+# Tsconfig cache
+tsconfig.tsbuildinfo
+
+# Nodegui cache 
+tmp-jam-pack-nodegui/
+
